@@ -584,7 +584,7 @@ func printGoroutines(t *Term, gs []*api.Goroutine, fgl formatGoroutineLoc, bPrin
 		}
 		fmt.Printf("%sGoroutine %s\n", prefix, formatGoroutine(g, fgl))
 		if bPrintStack {
-			stack, err := t.client.Stacktrace(g.ID, 10, false, nil)
+			stack, err := t.client.Stacktrace(g.ID, 100, false, nil)
 			if err != nil {
 				return err
 			}
